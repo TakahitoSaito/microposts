@@ -1,0 +1,31 @@
+<%= form_for(@user) do |f| %>
+    
+      <%= render 'shared/error_messages', object: f.object %> <!-- ここを追加 -->
+
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :area %>
+      <%= f.select :area, {"関東" => "area1", "北陸" => "area2", "東北" => "area3", "北海道" => "area4", 
+                            "関西" => "area5", "中国" => "area6", "四国" => "area7", "九州" => "area8", "沖縄" => "area9",} %>
+                            
+      <%= f.label :birthday %>
+      <%= f.date_select(
+          :birthday,
+          start_year: 1930,
+          end_year:   (Time.now.year - 18),
+          default:    Date.new(1989, 1, 1)) %>
+         
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+    <% end %>
