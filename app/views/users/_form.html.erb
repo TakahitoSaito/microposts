@@ -4,10 +4,10 @@
 
 
       <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, class: 'form-control' %>
 
       <%= f.label :email %>
-      <%= f.text_field :email %>
+      <%= f.text_field :email, class: 'form-control' %>
 
       <%= f.label :area %>
       <%= f.select :area, {"関東" => "area1", "北陸" => "area2", "東北" => "area3", "北海道" => "area4", 
@@ -15,17 +15,17 @@
                             
       <%= f.label :birthday %>
       <%= f.date_select(
-          :birthday,
+          :birthday, 
           start_year: 1930,
           end_year:   (Time.now.year - 18),
           default:    Date.new(1989, 1, 1)) %>
          
 
       <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.password_field :password, class: 'form-control' %>
 
       <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
 
       <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
     <% end %>
