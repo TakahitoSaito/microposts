@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20160405071147) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.date     "birthday"
+    t.string   "birthday_02"
     t.string   "area"
   end
 

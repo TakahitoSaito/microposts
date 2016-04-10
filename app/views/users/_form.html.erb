@@ -10,17 +10,15 @@
       <%= f.text_field :email, class: 'form-control' %>
 
       <%= f.label :area %>
-      <%= f.select :area, {"関東" => "area1", "北陸" => "area2", "東北" => "area3", "北海道" => "area4", 
-                            "関西" => "area5", "中国" => "area6", "四国" => "area7", "九州" => "area8", "沖縄" => "area9",}, {}, class: 'form-control' %>
+      <%= f.select :area, {"関東" => "関東", "北陸" => "北陸", "東北" => "東北", "北海道" => "北海道", 
+                            "関西" => "関西", "中国" => "中国", "四国" => "四国", "九州" => "九州", "沖縄" => "沖縄",}, {}, class: 'form-control' %>
                             
-      <%= f.label :birthday %>
-      <%= f.date_select(
-          :birthday, 
-          start_year: 1930,
-          end_year:   (Time.now.year - 18),
-          default:    Date.new(1989, 1, 1),class: 'form-control') %>
-         
-
+     
+          
+      <%= f.label :birthday_02 %>
+      <%= f.text_field :birthday_02, class: 'datepicker form-control' %>
+      
+      
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
 
@@ -29,3 +27,9 @@
 
       <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
     <% end %>
+     
+     <script type="text/javascript">
+        $(document).ready(function(){
+        $('.datepicker').datepicker();
+         });
+      </script> 
