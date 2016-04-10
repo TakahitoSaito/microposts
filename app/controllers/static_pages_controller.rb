@@ -1,6 +1,5 @@
 class StaticPagesController < ApplicationController
   def home
-    #テンプレートファイルをレンダリング（viewを描画・表示)
-    #render 'home'
+     @micropost = current_user.microposts.build if logged_in?
   end
 end
