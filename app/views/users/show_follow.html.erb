@@ -11,10 +11,10 @@
   <div class="col-md-8">
     <h3><%= @title %></h3>
      <% @users.each do |user| %>
-     <%= link_to gravatar_for(user, size: 30), user %>
-      <span class="label label-info"><%= user.name %></span>
-     
-      <br>
+       <div class="clearfix">
+        <%= link_to gravatar_for(user, size: 30), user %>
+        <span class="label label-info"><%= user.name %></span>
+      </div>
     <% end %>
   </div>
 </div>
